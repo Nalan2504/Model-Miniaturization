@@ -1,0 +1,27 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "adapter": "/root/model_miniaturization/data/approach2/qwen3_lora/adapter",
+  "test_set": "/root/model_miniaturization/data/processed/test.jsonl",
+  "n_total": 510,
+  "n_failed": 1,
+  "accuracy": 0.9076620825147348,
+  "macro_f1": 0.909105277837544,
+  "emergency_recall": 0.8266666666666667,
+  "per_class": {
+    "EMERGENCY": {
+      "precision": 1.0,
+      "recall": 0.8266666666666667,
+      "f1": 0.9051094890510949
+    },
+    "URGENT": {
+      "precision": 0.7929515418502202,
+      "recall": 1.0,
+      "f1": 0.8845208845208845
+    },
+    "ROUTINE": {
+      "precision": 1.0,
+      "recall": 0.88268156424581,
+      "f1": 0.9376854599406529
+    }
+  }
+}

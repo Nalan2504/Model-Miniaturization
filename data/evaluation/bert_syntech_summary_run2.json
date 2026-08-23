@@ -1,0 +1,37 @@
+{
+  "model": "dmis-lab/biobert-base-cased-v1.2",
+  "trained_on": "synthetic train.jsonl (4080 samples)",
+  "evaluated_on": "syntech-ai/medical-triage-500 (500 samples)",
+  "epochs": 3,
+  "EMERGENCY": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 230.0
+  },
+  "URGENT": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 195.0
+  },
+  "ROUTINE": {
+    "precision": 0.15,
+    "recall": 1.0,
+    "f1-score": 0.2608695652173913,
+    "support": 75.0
+  },
+  "accuracy": 0.15,
+  "macro avg": {
+    "precision": 0.049999999999999996,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.08695652173913043,
+    "support": 500.0
+  },
+  "weighted avg": {
+    "precision": 0.0225,
+    "recall": 0.15,
+    "f1-score": 0.0391304347826087,
+    "support": 500.0
+  }
+}

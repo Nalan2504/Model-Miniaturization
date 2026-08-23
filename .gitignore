@@ -1,0 +1,36 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# --- Model weights & adapters (regenerable, large) ---
+*.pt
+*.bin
+*.safetensors
+*.gguf
+*.ckpt
+data/approach2/qwen3_lora_v4/
+data/pruning/qwen3_pruned_heads_layers/
+data/pruning/qwen3_pruned_lora/
+data/distillation/qwen3_kd_lora_v2/
+
+# --- Secrets: never commit ---
+.env
+*.pem
+*.key
+id_ed25519*
+id_rsa*
+
+# --- Internal handoff / working notes (not for publication) ---
+MAC_HANDOFF.md
+PROGRESS updated.md
+PROGRESS_updated.md
+src/PROGRESS_updated.md
+ajays work.md
+
+# --- OS ---
+.DS_Store
+Thumbs.db

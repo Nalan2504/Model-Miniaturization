@@ -1,0 +1,32 @@
+{
+  "model": "roberta-large",
+  "reference_source": "qiaojin/PubMedQA (pqa_labeled, long_answer)",
+  "n_per_class": 200,
+  "n_refs": 300,
+  "results": {
+    "EMERGENCY": {
+      "precision": 0.8108336925506592,
+      "recall": 0.8277108073234558,
+      "f1": 0.8191132545471191,
+      "n": 200
+    },
+    "URGENT": {
+      "precision": 0.8114133477210999,
+      "recall": 0.8275438547134399,
+      "f1": 0.8193338513374329,
+      "n": 200
+    },
+    "ROUTINE": {
+      "precision": 0.814087986946106,
+      "recall": 0.8265575170516968,
+      "f1": 0.8202027678489685,
+      "n": 200
+    },
+    "overall": {
+      "precision": 0.8120904564857483,
+      "recall": 0.8273573517799377,
+      "f1": 0.819585919380188,
+      "n": 600
+    }
+  }
+}
