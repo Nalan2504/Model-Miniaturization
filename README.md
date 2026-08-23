@@ -149,14 +149,21 @@ as a result.
 │   ├── evaluation_results.ipynb
 │   ├── pruning_analysis.ipynb
 │   └── data_exploration.ipynb
-├── data/                    # training/eval datasets and evaluation outputs
+├── data/
+│   ├── evaluation/          # evaluation outputs backing the results tables above
+│   └── approach2/           # sample of the training format + student eval summary
 ├── docs/
-│   ├── DETAILED_RESULTS.md  # full metric tables across all 4 datasets and model states
-│   └── PRESENTATION.md      # 20-minute presentation script and slide contents
-├── Report and PPT/          # final report and slide deck (PDF)
+│   └── DETAILED_RESULTS.md  # full metric tables across all 4 datasets and model states
+├── report/                  # final report (PDF)
 ├── app_streamlit.py         # Streamlit demo dashboard
 └── requirements.txt
 ```
+
+**On the data:** `data/` holds the evaluation outputs and one sample file showing the training
+format. The full training corpora (~110 MB: the merged v4 set, the 87k-patient fedmml dataset,
+and the synthetic generations) are deliberately not committed — they're regenerable from
+`src/data_generation/` and `src/approach2/`, and they'd bury the code. The MIMIC-IV-ED demo
+subset is available from PhysioNet under ODbL.
 
 ---
 
@@ -203,7 +210,10 @@ above are the honest external-test numbers.
 
 ## Data & licensing
 
-`mimic-iv-ed-demo-2.2/` is the **open demo subset** of MIMIC-IV-ED, distributed by PhysioNet
-under the **Open Database License (ODbL)**. It is included under that license's terms; any
-redistribution carries ODbL's attribution and share-alike obligations. The full MIMIC-IV-ED
-dataset is credentialed and is *not* included here.
+Evaluation uses the **open demo subset** of MIMIC-IV-ED, distributed by PhysioNet under the
+**Open Database License (ODbL)**. It is not redistributed here — download it from PhysioNet and
+place it at `mimic-iv-ed-demo-2.2/`, then run the processing scripts in `src/approach2/`. The
+full MIMIC-IV-ED dataset is credentialed and is likewise not included.
+
+The fedmml ED triage dataset (87k patients across three countries) is used for the v4 training
+mix and is also not redistributed here.

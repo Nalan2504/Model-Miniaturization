@@ -17,6 +17,26 @@ data/pruning/qwen3_pruned_heads_layers/
 data/pruning/qwen3_pruned_lora/
 data/distillation/qwen3_kd_lora_v2/
 
+# --- Bulk training data (regenerable via src/, kept out to keep the repo browsable) ---
+data/approach2/combined_train_v4.jsonl
+data/approach2/fedmml_train.jsonl
+data/approach2/fedmml_test.jsonl
+data/fedmml/
+data/processed/
+data/synthetic/
+data/evaluation/*.log
+src/**/*.jsonl
+
+# --- Third-party raw dataset (PhysioNet MIMIC-IV-ED demo; fetch separately) ---
+mimic-iv-ed-demo-2.2/
+
+# --- Internal working notes, not for publication ---
+CODE_STUDY_GUIDE.md
+PRESENTATION.md
+docs/PRESENTATION.md
+Report and PPT/
+*_PPT.pdf
+
 # --- Secrets: never commit ---
 .env
 *.pem

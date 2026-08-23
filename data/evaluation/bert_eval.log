@@ -1,111 +1,0 @@
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Model : dmis-lab/biobert-base-cased-v1.2
-Device: cuda
-
-Loading training data...
-  train=4080 | val=510
-Loading syntech-ai/medical-triage-500 (eval set)...
-  500 samples | {'EMERGENCY': 230, 'URGENT': 195, 'ROUTINE': 75}
-
-Tokenising with dmis-lab/biobert-base-cased-v1.2...
-Map:   0%|          | 0/4080 [00:00<?, ? examples/s]Map:  25%|██▍       | 1000/4080 [00:00<00:00, 7156.88 examples/s]Map:  74%|███████▎  | 3000/4080 [00:00<00:00, 12253.84 examples/s]Map: 100%|██████████| 4080/4080 [00:00<00:00, 12667.34 examples/s]
-Map:   0%|          | 0/510 [00:00<?, ? examples/s]Map: 100%|██████████| 510/510 [00:00<00:00, 12830.00 examples/s]
-Map:   0%|          | 0/500 [00:00<?, ? examples/s]Map: 100%|██████████| 500/500 [00:00<00:00, 16034.87 examples/s]
-[transformers] You passed `num_labels=3` which is incompatible to the `id2label` map of length `2`.
-  Done.
-Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 35955.31it/s]
-[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: dmis-lab/biobert-base-cased-v1.2
-Key                                        | Status     | 
--------------------------------------------+------------+-
-cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
-cls.predictions.bias                       | UNEXPECTED | 
-cls.predictions.transform.dense.weight     | UNEXPECTED | 
-cls.seq_relationship.weight                | UNEXPECTED | 
-cls.seq_relationship.bias                  | UNEXPECTED | 
-cls.predictions.decoder.weight             | UNEXPECTED | 
-cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
-cls.predictions.transform.dense.bias       | UNEXPECTED | 
-cls.predictions.decoder.bias               | UNEXPECTED | 
-classifier.weight                          | MISSING    | 
-classifier.bias                            | MISSING    | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
-
-Fine-tuning dmis-lab/biobert-base-cased-v1.2 for 3 epochs...
-  0%|          | 0/384 [00:00<?, ?it/s]  0%|          | 1/384 [00:04<27:30,  4.31s/it]  1%|          | 3/384 [00:04<07:27,  1.17s/it]  1%|▏         | 5/384 [00:04<03:49,  1.65it/s]  2%|▏         | 7/384 [00:04<02:22,  2.64it/s]  2%|▏         | 9/384 [00:04<01:38,  3.81it/s]  3%|▎         | 11/384 [00:05<01:12,  5.12it/s]  3%|▎         | 13/384 [00:05<00:56,  6.52it/s]  4%|▍         | 15/384 [00:05<00:46,  7.93it/s]  4%|▍         | 17/384 [00:05<00:39,  9.25it/s]  5%|▍         | 19/384 [00:05<00:34, 10.45it/s]  5%|▌         | 21/384 [00:05<00:31, 11.43it/s]  6%|▌         | 23/384 [00:05<00:29, 12.22it/s]  7%|▋         | 25/384 [00:05<00:28, 12.79it/s]  7%|▋         | 27/384 [00:06<00:26, 13.33it/s]  8%|▊         | 29/384 [00:06<00:25, 13.67it/s]  8%|▊         | 31/384 [00:06<00:25, 13.93it/s]  9%|▊         | 33/384 [00:06<00:24, 14.08it/s]  9%|▉         | 35/384 [00:06<00:24, 14.22it/s] 10%|▉         | 37/384 [00:06<00:24, 14.31it/s] 10%|█         | 39/384 [00:06<00:24, 14.20it/s] 11%|█         | 41/384 [00:07<00:23, 14.32it/s] 11%|█         | 43/384 [00:07<00:23, 14.38it/s] 12%|█▏        | 45/384 [00:07<00:23, 14.46it/s] 12%|█▏        | 47/384 [00:07<00:23, 14.46it/s] 13%|█▎        | 49/384 [00:07<00:23, 14.48it/s]                                                 13%|█▎        | 50/384 [00:07<00:23, 14.48it/s] 13%|█▎        | 51/384 [00:07<00:23, 14.38it/s] 14%|█▍        | 53/384 [00:07<00:23, 14.26it/s] 14%|█▍        | 55/384 [00:08<00:22, 14.32it/s] 15%|█▍        | 57/384 [00:08<00:22, 14.37it/s] 15%|█▌        | 59/384 [00:08<00:22, 14.42it/s] 16%|█▌        | 61/384 [00:08<00:22, 14.34it/s] 16%|█▋        | 63/384 [00:08<00:22, 14.30it/s] 17%|█▋        | 65/384 [00:08<00:22, 14.30it/s] 17%|█▋        | 67/384 [00:08<00:22, 14.36it/s] 18%|█▊        | 69/384 [00:09<00:22, 14.25it/s] 18%|█▊        | 71/384 [00:09<00:21, 14.35it/s] 19%|█▉        | 73/384 [00:09<00:21, 14.46it/s] 20%|█▉        | 75/384 [00:09<00:21, 14.45it/s] 20%|██        | 77/384 [00:09<00:21, 14.49it/s] 21%|██        | 79/384 [00:09<00:21, 14.51it/s] 21%|██        | 81/384 [00:09<00:20, 14.45it/s] 22%|██▏       | 83/384 [00:10<00:20, 14.42it/s] 22%|██▏       | 85/384 [00:10<00:20, 14.47it/s] 23%|██▎       | 87/384 [00:10<00:20, 14.51it/s] 23%|██▎       | 89/384 [00:10<00:20, 14.52it/s] 24%|██▎       | 91/384 [00:10<00:20, 14.48it/s] 24%|██▍       | 93/384 [00:10<00:20, 14.49it/s] 25%|██▍       | 95/384 [00:10<00:20, 14.43it/s] 25%|██▌       | 97/384 [00:10<00:19, 14.42it/s] 26%|██▌       | 99/384 [00:11<00:19, 14.26it/s]                                                 26%|██▌       | 100/384 [00:11<00:19, 14.26it/s] 26%|██▋       | 101/384 [00:11<00:19, 14.28it/s] 27%|██▋       | 103/384 [00:11<00:19, 14.35it/s] 27%|██▋       | 105/384 [00:11<00:19, 14.42it/s] 28%|██▊       | 107/384 [00:11<00:19, 14.44it/s] 28%|██▊       | 109/384 [00:11<00:19, 14.41it/s] 29%|██▉       | 111/384 [00:11<00:18, 14.40it/s] 29%|██▉       | 113/384 [00:12<00:18, 14.28it/s] 30%|██▉       | 115/384 [00:12<00:19, 13.73it/s] 30%|███       | 117/384 [00:12<00:19, 13.63it/s] 31%|███       | 119/384 [00:12<00:19, 13.88it/s] 32%|███▏      | 121/384 [00:12<00:18, 14.06it/s] 32%|███▏      | 123/384 [00:12<00:18, 14.22it/s] 33%|███▎      | 125/384 [00:12<00:18, 14.18it/s] 33%|███▎      | 127/384 [00:13<00:17, 14.36it/s]{'loss': '0.8804', 'grad_norm': '4.418', 'learning_rate': '1.96e-05', 'epoch': '0.3906'}
-{'loss': '0.06773', 'grad_norm': '0.08078', 'learning_rate': '1.707e-05', 'epoch': '0.7812'}
-
-  0%|          | 0/8 [00:00<?, ?it/s][A
- 75%|███████▌  | 6/8 [00:00<00:00, 47.87it/s][A                                                 
-                                             [A 33%|███▎      | 128/384 [00:14<00:17, 14.36it/s]
-100%|██████████| 8/8 [00:00<00:00, 47.87it/s][A
-                                             [A{'eval_loss': '0.001411', 'eval_accuracy': '1', 'eval_macro_f1': '1', 'eval_emergency_f1': '1', 'eval_urgent_f1': '1', 'eval_routine_f1': '1', 'eval_runtime': '0.6435', 'eval_samples_per_second': '792.5', 'eval_steps_per_second': '12.43', 'epoch': '1'}
-
-Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s][A
-Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.02s/it][AWriting model shards: 100%|██████████| 1/1 [00:01<00:00,  1.02s/it]
- 34%|███▎      | 129/384 [00:16<02:29,  1.71it/s] 34%|███▍      | 131/384 [00:16<01:48,  2.32it/s] 35%|███▍      | 133/384 [00:16<01:20,  3.10it/s] 35%|███▌      | 135/384 [00:17<01:01,  4.06it/s] 36%|███▌      | 137/384 [00:17<00:47,  5.16it/s] 36%|███▌      | 139/384 [00:17<00:38,  6.40it/s] 37%|███▋      | 141/384 [00:17<00:31,  7.76it/s] 37%|███▋      | 143/384 [00:17<00:25,  9.39it/s] 38%|███▊      | 145/384 [00:17<00:22, 10.77it/s] 38%|███▊      | 147/384 [00:17<00:20, 11.66it/s] 39%|███▉      | 149/384 [00:18<00:18, 12.38it/s]                                                  39%|███▉      | 150/384 [00:18<00:18, 12.38it/s] 39%|███▉      | 151/384 [00:18<00:18, 12.86it/s] 40%|███▉      | 153/384 [00:18<00:17, 13.30it/s] 40%|████      | 155/384 [00:18<00:16, 13.56it/s] 41%|████      | 157/384 [00:18<00:16, 13.72it/s] 41%|████▏     | 159/384 [00:18<00:16, 13.74it/s] 42%|████▏     | 161/384 [00:18<00:16, 13.84it/s] 42%|████▏     | 163/384 [00:18<00:15, 13.93it/s] 43%|████▎     | 165/384 [00:19<00:15, 14.10it/s] 43%|████▎     | 167/384 [00:19<00:15, 14.24it/s] 44%|████▍     | 169/384 [00:19<00:15, 14.28it/s] 45%|████▍     | 171/384 [00:19<00:14, 14.20it/s] 45%|████▌     | 173/384 [00:19<00:14, 14.18it/s] 46%|████▌     | 175/384 [00:19<00:14, 14.23it/s] 46%|████▌     | 177/384 [00:19<00:14, 14.21it/s] 47%|████▋     | 179/384 [00:20<00:14, 14.16it/s] 47%|████▋     | 181/384 [00:20<00:14, 14.20it/s] 48%|████▊     | 183/384 [00:20<00:14, 14.23it/s] 48%|████▊     | 185/384 [00:20<00:13, 14.25it/s] 49%|████▊     | 187/384 [00:20<00:13, 14.27it/s] 49%|████▉     | 189/384 [00:20<00:13, 14.32it/s] 50%|████▉     | 191/384 [00:20<00:13, 14.33it/s] 50%|█████     | 193/384 [00:21<00:13, 14.26it/s] 51%|█████     | 195/384 [00:21<00:13, 14.26it/s] 51%|█████▏    | 197/384 [00:21<00:13, 14.28it/s] 52%|█████▏    | 199/384 [00:21<00:13, 14.20it/s]                                                  52%|█████▏    | 200/384 [00:21<00:12, 14.20it/s] 52%|█████▏    | 201/384 [00:21<00:12, 14.19it/s] 53%|█████▎    | 203/384 [00:21<00:12, 14.25it/s] 53%|█████▎    | 205/384 [00:21<00:12, 14.28it/s] 54%|█████▍    | 207/384 [00:22<00:12, 14.26it/s] 54%|█████▍    | 209/384 [00:22<00:12, 14.28it/s] 55%|█████▍    | 211/384 [00:22<00:12, 14.36it/s] 55%|█████▌    | 213/384 [00:22<00:11, 14.42it/s] 56%|█████▌    | 215/384 [00:22<00:11, 14.41it/s] 57%|█████▋    | 217/384 [00:22<00:11, 14.41it/s] 57%|█████▋    | 219/384 [00:22<00:11, 14.35it/s] 58%|█████▊    | 221/384 [00:23<00:11, 14.32it/s] 58%|█████▊    | 223/384 [00:23<00:11, 14.35it/s] 59%|█████▊    | 225/384 [00:23<00:11, 14.43it/s] 59%|█████▉    | 227/384 [00:23<00:10, 14.41it/s] 60%|█████▉    | 229/384 [00:23<00:10, 14.45it/s] 60%|██████    | 231/384 [00:23<00:10, 14.43it/s] 61%|██████    | 233/384 [00:23<00:10, 14.41it/s] 61%|██████    | 235/384 [00:24<00:10, 14.36it/s] 62%|██████▏   | 237/384 [00:24<00:10, 14.37it/s] 62%|██████▏   | 239/384 [00:24<00:10, 14.43it/s] 63%|██████▎   | 241/384 [00:24<00:09, 14.41it/s] 63%|██████▎   | 243/384 [00:24<00:09, 14.37it/s] 64%|██████▍   | 245/384 [00:24<00:09, 14.31it/s] 64%|██████▍   | 247/384 [00:24<00:09, 14.27it/s] 65%|██████▍   | 249/384 [00:24<00:09, 14.31it/s]                                                  65%|██████▌   | 250/384 [00:25<00:09, 14.31it/s] 65%|██████▌   | 251/384 [00:25<00:09, 14.30it/s] 66%|██████▌   | 253/384 [00:25<00:09, 14.38it/s] 66%|██████▋   | 255/384 [00:25<00:08, 14.50it/s]{'loss': '0.004721', 'grad_norm': '0.03265', 'learning_rate': '1.413e-05', 'epoch': '1.172'}
-{'loss': '0.001435', 'grad_norm': '0.01738', 'learning_rate': '1.114e-05', 'epoch': '1.562'}
-{'loss': '0.001034', 'grad_norm': '0.01408', 'learning_rate': '8.144e-06', 'epoch': '1.953'}
-
-  0%|          | 0/8 [00:00<?, ?it/s][A
- 75%|███████▌  | 6/8 [00:00<00:00, 48.08it/s][A                                                 
-                                             [A 67%|██████▋   | 256/384 [00:25<00:08, 14.50it/s]
-100%|██████████| 8/8 [00:00<00:00, 48.08it/s][A
-                                             [A{'eval_loss': '0.0005447', 'eval_accuracy': '1', 'eval_macro_f1': '1', 'eval_emergency_f1': '1', 'eval_urgent_f1': '1', 'eval_routine_f1': '1', 'eval_runtime': '0.2044', 'eval_samples_per_second': '2496', 'eval_steps_per_second': '39.15', 'epoch': '2'}
-
-Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s][A
-Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.04it/s][AWriting model shards: 100%|██████████| 1/1 [00:00<00:00,  1.04it/s]
- 67%|██████▋   | 257/384 [00:28<00:59,  2.14it/s] 67%|██████▋   | 259/384 [00:28<00:43,  2.88it/s] 68%|██████▊   | 261/384 [00:28<00:32,  3.79it/s] 68%|██████▊   | 263/384 [00:28<00:24,  4.86it/s] 69%|██████▉   | 265/384 [00:28<00:19,  6.05it/s] 70%|██████▉   | 267/384 [00:28<00:16,  7.30it/s] 70%|███████   | 269/384 [00:29<00:13,  8.56it/s] 71%|███████   | 271/384 [00:29<00:11,  9.73it/s] 71%|███████   | 273/384 [00:29<00:10, 10.79it/s] 72%|███████▏  | 275/384 [00:29<00:09, 11.63it/s] 72%|███████▏  | 277/384 [00:29<00:08, 12.35it/s] 73%|███████▎  | 279/384 [00:29<00:08, 12.87it/s] 73%|███████▎  | 281/384 [00:29<00:07, 13.32it/s] 74%|███████▎  | 283/384 [00:30<00:07, 13.63it/s] 74%|███████▍  | 285/384 [00:30<00:07, 13.87it/s] 75%|███████▍  | 287/384 [00:30<00:06, 14.11it/s] 75%|███████▌  | 289/384 [00:30<00:06, 14.20it/s] 76%|███████▌  | 291/384 [00:30<00:06, 14.42it/s] 76%|███████▋  | 293/384 [00:30<00:06, 14.55it/s] 77%|███████▋  | 295/384 [00:30<00:06, 14.67it/s] 77%|███████▋  | 297/384 [00:30<00:05, 14.75it/s] 78%|███████▊  | 299/384 [00:31<00:05, 14.72it/s]                                                  78%|███████▊  | 300/384 [00:31<00:05, 14.72it/s] 78%|███████▊  | 301/384 [00:31<00:05, 14.79it/s] 79%|███████▉  | 303/384 [00:31<00:05, 14.84it/s] 79%|███████▉  | 305/384 [00:31<00:05, 14.91it/s] 80%|███████▉  | 307/384 [00:31<00:05, 14.90it/s] 80%|████████  | 309/384 [00:31<00:05, 14.86it/s] 81%|████████  | 311/384 [00:31<00:04, 14.89it/s] 82%|████████▏ | 313/384 [00:32<00:04, 14.95it/s] 82%|████████▏ | 315/384 [00:32<00:04, 14.85it/s] 83%|████████▎ | 317/384 [00:32<00:04, 14.91it/s] 83%|████████▎ | 319/384 [00:32<00:04, 14.92it/s] 84%|████████▎ | 321/384 [00:32<00:04, 14.94it/s] 84%|████████▍ | 323/384 [00:32<00:04, 14.90it/s] 85%|████████▍ | 325/384 [00:32<00:03, 14.96it/s] 85%|████████▌ | 327/384 [00:32<00:03, 14.96it/s] 86%|████████▌ | 329/384 [00:33<00:03, 14.96it/s] 86%|████████▌ | 331/384 [00:33<00:03, 14.94it/s] 87%|████████▋ | 333/384 [00:33<00:03, 14.96it/s] 87%|████████▋ | 335/384 [00:33<00:03, 14.98it/s] 88%|████████▊ | 337/384 [00:33<00:03, 15.00it/s] 88%|████████▊ | 339/384 [00:33<00:03, 15.00it/s] 89%|████████▉ | 341/384 [00:33<00:02, 14.98it/s] 89%|████████▉ | 343/384 [00:34<00:02, 14.78it/s] 90%|████████▉ | 345/384 [00:34<00:02, 14.79it/s] 90%|█████████ | 347/384 [00:34<00:02, 14.71it/s] 91%|█████████ | 349/384 [00:34<00:02, 14.72it/s]                                                  91%|█████████ | 350/384 [00:34<00:02, 14.72it/s] 91%|█████████▏| 351/384 [00:34<00:02, 14.74it/s] 92%|█████████▏| 353/384 [00:34<00:02, 14.82it/s] 92%|█████████▏| 355/384 [00:34<00:01, 14.85it/s] 93%|█████████▎| 357/384 [00:34<00:01, 14.87it/s] 93%|█████████▎| 359/384 [00:35<00:01, 14.89it/s] 94%|█████████▍| 361/384 [00:35<00:01, 14.90it/s] 95%|█████████▍| 363/384 [00:35<00:01, 14.81it/s] 95%|█████████▌| 365/384 [00:35<00:01, 14.87it/s] 96%|█████████▌| 367/384 [00:35<00:01, 14.91it/s] 96%|█████████▌| 369/384 [00:35<00:01, 14.96it/s] 97%|█████████▋| 371/384 [00:35<00:00, 14.96it/s] 97%|█████████▋| 373/384 [00:36<00:00, 14.99it/s] 98%|█████████▊| 375/384 [00:36<00:00, 15.01it/s] 98%|█████████▊| 377/384 [00:36<00:00, 15.01it/s] 99%|█████████▊| 379/384 [00:36<00:00, 15.03it/s] 99%|█████████▉| 381/384 [00:36<00:00, 15.01it/s]100%|█████████▉| 383/384 [00:36<00:00, 15.06it/s]{'loss': '0.0008502', 'grad_norm': '0.01293', 'learning_rate': '5.15e-06', 'epoch': '2.344'}
-{'loss': '0.0007725', 'grad_norm': '0.0123', 'learning_rate': '2.156e-06', 'epoch': '2.734'}
-
-  0%|          | 0/8 [00:00<?, ?it/s][A
- 75%|███████▌  | 6/8 [00:00<00:00, 47.89it/s][A                                                 
-                                             [A100%|██████████| 384/384 [00:37<00:00, 15.06it/s]
-100%|██████████| 8/8 [00:00<00:00, 47.89it/s][A
-                                             [A{'eval_loss': '0.0004382', 'eval_accuracy': '1', 'eval_macro_f1': '1', 'eval_emergency_f1': '1', 'eval_urgent_f1': '1', 'eval_routine_f1': '1', 'eval_runtime': '0.218', 'eval_samples_per_second': '2339', 'eval_steps_per_second': '36.7', 'epoch': '3'}
-
-Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s][A
-Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.05it/s][AWriting model shards: 100%|██████████| 1/1 [00:00<00:00,  1.05it/s]
-                                                 100%|██████████| 384/384 [00:39<00:00, 15.06it/s]100%|██████████| 384/384 [00:39<00:00,  9.66it/s]
-{'train_runtime': '39.47', 'train_samples_per_second': '310.1', 'train_steps_per_second': '9.729', 'train_loss': '0.1247', 'epoch': '3'}
-
-Evaluating on syntech-ai/medical-triage-500...
-  0%|          | 0/8 [00:00<?, ?it/s] 25%|██▌       | 2/8 [00:00<00:00, 13.22it/s]100%|██████████| 8/8 [00:00<00:00, 35.25it/s]100%|██████████| 8/8 [00:00<00:00, 31.27it/s]
-/root/envs/miniaturization/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1833: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
-/root/envs/miniaturization/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1833: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
-/root/envs/miniaturization/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1833: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
-/root/envs/miniaturization/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1833: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
-/root/envs/miniaturization/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1833: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
-/root/envs/miniaturization/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1833: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
-
-=======================================================
-BERT EVALUATION — syntech-ai/medical-triage-500
-=======================================================
-              precision    recall  f1-score   support
-
-   EMERGENCY      0.000     0.000     0.000       230
-      URGENT      0.297     0.138     0.189       195
-     ROUTINE      0.181     0.987     0.306        75
-
-    accuracy                          0.202       500
-   macro avg      0.159     0.375     0.165       500
-weighted avg      0.143     0.202     0.120       500
-
-Confusion matrix (rows=true, cols=pred):
-             EMERGENCY     URGENT    ROUTINE
-EMERGENCY            0         63        167
-URGENT               0         27        168
-ROUTINE              0          1         74
-
-*** Emergency recall: 0.0% (target: >95%) ***
-
-Per-sample results → /root/model_miniaturization/data/evaluation/bert/bert_syntech_eval.jsonl
-Summary → /root/model_miniaturization/data/evaluation/bert/bert_syntech_summary.json
